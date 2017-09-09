@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/8 | Hexo</title>
+  <title>win10系统下安装mysql5.7.19 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2017/08/index.html">
+  <meta name="description" content="win10系统下安装mysql5.7.19遇到的问题WIN10系统MYSQL的下载与安装详细过程，记录如下：最近在研究node.js,所以想学习一下node.js连接数据库，在公司的时候用的是win7的系统，在网上百度了一些资料，跟着很快就装好了。今天一时兴起，想在家里面继续研究研究node连接数据库，所以就需要将MySQL给装起来，但是家里的电脑用起来系统是win10系统，用起来各种不顺手，再加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win10系统下安装mysql5.7.19">
+<meta property="og:url" content="http://yoursite.com/2017/09/09/win10系统下安装mysql5-7-19/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="win10系统下安装mysql5.7.19遇到的问题WIN10系统MYSQL的下载与安装详细过程，记录如下：最近在研究node.js,所以想学习一下node.js连接数据库，在公司的时候用的是win7的系统，在网上百度了一些资料，跟着很快就装好了。今天一时兴起，想在家里面继续研究研究node连接数据库，所以就需要将MySQL给装起来，但是家里的电脑用起来系统是win10系统，用起来各种不顺手，再加">
+<meta property="og:updated_time" content="2017-09-09T07:46:24.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="win10系统下安装mysql5.7.19">
+<meta name="twitter:description" content="win10系统下安装mysql5.7.19遇到的问题WIN10系统MYSQL的下载与安装详细过程，记录如下：最近在研究node.js,所以想学习一下node.js连接数据库，在公司的时候用的是win7的系统，在网上百度了一些资料，跟着很快就装好了。今天一时兴起，想在家里面继续研究研究node连接数据库，所以就需要将MySQL给装起来，但是家里的电脑用起来系统是win10系统，用起来各种不顺手，再加">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,103 +153,159 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-win10系统下安装mysql5-7-19" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      win10系统下安装mysql5.7.19
+    </h1>
+  
+
+        
+        <a href="/2017/09/09/win10系统下安装mysql5-7-19/" class="archive-article-date">
+  	<time datetime="2017-09-09T07:14:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="win10系统下安装mysql5-7-19遇到的问题"><a href="#win10系统下安装mysql5-7-19遇到的问题" class="headerlink" title="win10系统下安装mysql5.7.19遇到的问题"></a>win10系统下安装mysql5.7.19遇到的问题</h1><p>WIN10系统MYSQL的下载与安装详细过程，记录如下：<br>最近在研究node.js,所以想学习一下node.js连接数据库，在公司的时候用的是win7的系统，在网上百度了一些资料，跟着很快就装好了。今天一时兴起，想在家里面继续研究研究node连接数据库，所以就需要将MySQL给装起来，但是家里的电脑用起来系统是win10系统，用起来各种不顺手，再加上自己算是个装软件的小白，所以在win10上装成功MySQL是花了不少时间啊，所以想记录一下安装过程中耗费时间的点。</p>
+<p>1.初始化数据库<br>mysqld –initialize –user=mysql –console<br>一直报错说 mysqld不是内部或外部命令<br>More info: <a href="../../public/img/QQ图片20170909152839.png">Writing</a></p>
+<p>然后经过查阅资料发现导致这个错误的原因是因为漏了一步，在执行该步骤之前应该先切换目录值mysql所在的bin目录。然后输入mysqld –install，执行命令后，提示： Service successfully installed.表示安装成功。然后执行mysqld –initialize ，同时执行这个命令的时候工作目录也应该是在bin文件夹下，就不会说mysqld不是命令啦。</p>
+<p>2.mysqld istall以后不会爆错说mysqld不是命令啦，但是另外一个错误又来啦。执行mysqld –initialize命令时会根据my.init文件创建一个data文件夹河一些数据库系统用的基本表。执行命令时一直提示说文件位置不存在<br>More info: <a href="../../public/img/QQ图片20170909152913.png">Writing</a><br>其他步骤都是跟着网上的教程一步一步来的，并且我重新修改了环境变量以及其他的步骤，都无济于事。最后终于找到一片超级详细的安装教程，发现自己又忽略了一个细节。在创建my.ini文件时的位置又放错地方了。我把它放在了安装包的根目录下，因为之前搜的教程也没有特意提到该文件的位置，然后就像当然的把它放到根目录下了。该文件正确的路径应该是放在bin目录下，然后再执行命令，就会发现MySQL文件夹里多了一个data目录啦。数据库就初始化成功啦。</p>
+<p>接下来就可以开始其他的安装步骤啦。</p>
+<p>参考教程地址<a href="http://www.jb51.net/article/119369.htm" target="_blank" rel="external">http://www.jb51.net/article/119369.htm</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/26/跨域解决策略/" class="archive-article-date">
-  	<time datetime="2017-08-26T06:06:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/26/跨域解决策略/">跨域解决策略</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/09/win10系统下安装mysql5-7-19/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/24/node搭配node-http-proxy解决ajax跨域问题/" class="archive-article-date">
-  	<time datetime="2017-08-24T15:14:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/26/跨域解决策略/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">跨域解决策略</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/24/node搭配node-http-proxy解决ajax跨域问题/">node搭配node-http-proxy解决ajax跨域问题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/19/hello-world/" class="archive-article-date">
-  	<time datetime="2017-08-19T09:19:14.207Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/19/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -268,8 +328,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
